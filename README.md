@@ -1,2 +1,3 @@
 # Firstcode
 this is my first repository
+auther     prashant
