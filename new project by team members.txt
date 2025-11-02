@@ -1,0 +1,33 @@
+import java.util.Scanner ;
+class Main {
+              public static void main(String[] args)
+                      {   
+                          Scanner sc = new
+                         Scanner(System.in) ;
+System.out.println(" Enter A : ") ;
+int a = sc.nextInt() ;     
+System.out.println(" Enter B : ") ;
+int b = sc.nextInt() ;     
+System.out.println(" Enter C : ") ;
+int c = sc.nextInt()  ;    
+  
+int d = b*b-4*a*c ;
+
+if (d>=0) {
+                  double k = Math.sqrt(d) ;
+                  double x = (-b+k)/2*a ;
+                  double y = (-b-k)/2*a ;
+if (x == y) {
+System.out.println(" Equal roots : " + x) ;  
+                   }
+else {
+System.out.println(" First root : " + x) ;
+System.out.println(" Second root : " + y) ;   
+         }
+                }
+else {
+System.out.println(" No Real Roots ") ; 
+        }
+  
+       } 
+           }
