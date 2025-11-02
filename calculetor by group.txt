@@ -1,0 +1,94 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double num1, num2;
+        int choice;
+
+        do {
+            System.out.println("\n--- Scientific Calculator ---");
+            System.out.println("1. Addition");
+            System.out.println("2. Subtraction");
+            System.out.println("3. Multiplication");
+            System.out.println("4. Division");
+            System.out.println("5. Power");
+            System.out.println("6. Square Root");
+            System.out.println("7. Sine");
+            System.out.println("8. Cosine");
+            System.out.println("9. Tangent");
+            System.out.println("10. Logarithm");
+            System.out.println("0. Exit");
+            System.out.print("Choose an operation:");
+            choice = sc.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter two numbers: ");
+                    num1 = sc.nextDouble();
+                    num2 = sc.nextDouble();
+                    System.out.println("Result: " + (num1 + num2));
+                    break;
+                case 2:
+                    System.out.print("Enter two numbers: ");
+                    num1 = sc.nextDouble();
+                    num2 = sc.nextDouble();
+                    System.out.println("Result: " + (num1 - num2));
+                    break;
+                case 3:
+                    System.out.print("Enter two numbers: ");
+                    num1 = sc.nextDouble();
+                    num2 = sc.nextDouble();
+                    System.out.println("Result: " + (num1 * num2));
+                    break;
+                case 4:
+                    System.out.print("Enter two numbers: ");
+                    num1 = sc.nextDouble();
+                    num2 = sc.nextDouble();
+                    if (num2 != 0)
+                        System.out.println("Result: " + (num1 / num2));
+                    else
+                        System.out.println("Error: Division by zero");
+                    break;
+                case 5:
+                    System.out.print("Enter base and exponent: ");
+                    num1 = sc.nextDouble();
+                    num2 = sc.nextDouble();
+                    System.out.println("Result: " + Math.pow(num1, num2));
+                    break;
+                case 6:
+                    System.out.print("Enter number: ");
+                    num1 = sc.nextDouble();
+                    System.out.println("Result: " + Math.sqrt(num1));
+                    break;
+                case 7:
+                    System.out.print("Enter angle in degrees: ");
+                    num1 = Math.toRadians(sc.nextDouble());
+                    System.out.println("Result: " + Math.sin(num1));
+                    break;
+                case 8:
+                    System.out.print("Enter angle in degrees: ");
+                    num1 = Math.toRadians(sc.nextDouble());
+                    System.out.println("Result: " + Math.cos(num1));
+                    break;
+                case 9:
+                    System.out.print("Enter angle in degrees: ");
+                    num1 = Math.toRadians(sc.nextDouble());
+                    System.out.println("Result: " + Math.tan(num1));
+                    break;
+                case 10:
+                    System.out.print("Enter number: ");
+                    num1 = sc.nextDouble();
+                    System.out.println("Result: " + Math.log(num1));
+                    break;
+                case 0:
+                    System.out.println("Exiting calculator...");
+                    break;
+                default:
+                    System.out.println("Invalid choice. Try again.");
+            }
+        } while (choice != 0);
+
+        sc.close();
+    }
+}
