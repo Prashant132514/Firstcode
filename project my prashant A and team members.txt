@@ -1,0 +1,140 @@
+import java.util.Scanner;
+
+public class UnitConverter {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("| Unit Converter |");
+        System.out.println("1. Length Conversion");
+        System.out.println("2. Temperature Conversion");
+        System.out.println("3. Weight Conversion");
+        System.out.print("Choose conversion type (1-3): ");
+        
+        int choice = scanner.nextInt();
+        
+        switch(choice) {
+            case 1:
+                lengthConversion(scanner);
+                break;
+            case 2:
+                temperatureConversion(scanner);
+                break;
+            case 3:
+                weightConversion(scanner);
+                break;
+            default:
+                System.out.println("Invalid choice!");
+        }
+        
+        scanner.close();
+    }
+    
+    // Length Conversion Method
+    public static void lengthConversion(Scanner scanner) {
+        System.out.println("| Length Conversion |");
+        System.out.println("1. Kilometers to Miles");
+        System.out.println("2. Miles to Kilometers");
+        System.out.println("3. Meters to Feet");
+        System.out.println("4. Feet to Meters");
+        System.out.print("Choose conversion: ");
+        
+        int option = scanner.nextInt();
+        System.out.print("Enter value: ");
+        double value = scanner.nextDouble();
+        double result = 0;
+        
+        switch(option) {
+            case 1:
+                result = value * 0.621371;
+                System.out.printf("%f kilometers = %f miles", value, result);
+                break;
+            case 2:
+                result = value * 1.60934;
+                System.out.printf("%f miles = %f kilometers", value, result);
+                break;
+            case 3:
+                result = value * 3.28084;
+                System.out.printf("%f meters = %f feet", value, result);
+                break;
+            case 4:
+                result = value * 0.3048;
+                System.out.printf("%f feet = %f meters", value, result);
+                break;
+            default:
+                System.out.println("Invalid option!");
+        }
+    }
+    
+    // Temperature Conversion Method
+    public static void temperatureConversion(Scanner scanner) {
+        System.out.println("| Temperature Conversion |");
+        System.out.println("1. Celsius to Fahrenheit");
+        System.out.println("2. Fahrenheit to Celsius");
+        System.out.println("3. Celsius to Kelvin");
+        System.out.println("4. Kelvin to Celsius");
+        System.out.print("Choose conversion: ");
+        
+        int option = scanner.nextInt();
+        System.out.print("Enter value: ");
+        double value = scanner.nextDouble();
+        double result = 0;
+        
+        switch(option) {
+            case 1:
+                result = (value * 9/5) + 32;
+                System.out.printf("%f°C = %f°F", value, result);
+                break;
+            case 2:
+                result = (value - 32) * 5/9;
+                System.out.printf("%f°F = %f°C", value, result);
+                break;
+            case 3:
+                result = value + 273.15;
+                System.out.printf("%f°C = %f K", value, result);
+                break;
+            case 4:
+                result = value - 273.15;
+                System.out.printf("%f K = %f°C", value, result);
+                break;
+            default:
+                System.out.println("Invalid option!");
+        }
+    }
+    
+    // Weight Conversion Method
+    public static void weightConversion(Scanner scanner) {
+        System.out.println("| Weight Conversion |");
+        System.out.println("1. Kilograms to Pounds");
+        System.out.println("2. Pounds to Kilograms");
+        System.out.println("3. Grams to Ounces");
+        System.out.println("4. Ounces to Grams");
+        System.out.print("Choose conversion: ");
+        
+        int option = scanner.nextInt();
+        System.out.print("Enter value: ");
+        double value = scanner.nextDouble();
+        double result = 0;
+        
+        switch(option) {
+            case 1:
+                result = value * 2.20462;
+                System.out.printf("%f kg = %f lbs", value, result);
+                break;
+            case 2:
+                result = value * 0.453592;
+                System.out.printf("%f lbs = %f kg", value, result);
+                break;
+            case 3:
+                result = value * 0.035274;
+                System.out.printf("%f g = %f oz", value, result);
+                break;
+            case 4:
+                result = value * 28.3495;
+                System.out.printf("%f oz = %f g", value, result);
+                break;
+            default:
+                System.out.println("Invalid option!");
+        }
+    }
+}
